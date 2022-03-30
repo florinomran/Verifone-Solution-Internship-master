@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  padding: 50px 40px 0px 40px;
+}
+
+.title {
+  position: relative;
+  top: 50px;
+  left: 38px;
+  font-weight: 400;
+  color: #656f80;
+  margin-bottom: 40px;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  background-color: #3390e7;
+  width: 40px;
+  height: 3px;
+  top: 50px;
+  left: 6px;
+}
+
+
+/*Products section*/
+.product-box {
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 15px -6px #000000;
+  box-shadow: 0px 2px 15px -6px #000000;
+  padding: 12px;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 10px;
+  margin-right: 25px;
+}
+
+.product-box:hover {
+  padding: 15px;
+  -webkit-box-shadow: 0px 8px 25px -3px #000000;
+  box-shadow: 0px 8px 25px -3px #000000;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+}
+
+.box-name {
+  width: 150px;
+  text-align: center;
+}
+
+.box-price {
+  display: block;
+  width:120px;
+}
+
+.product-name {
+  color: #3a495c;
+}
+
+.product-price {
+  color: #3b95e6;
+}
+.product-cost {
+  font-weight: 600;
+}
+
+/* Cart section */
+
+.cart {
+  border: 2px solid #bfc2ca6b;
+  border-radius: 5px;
+  background-color: #f0f3f8;
+}
+
+.cart-title {
+  color: #60656d;
+  padding: 25px 0px 30px 10px;
+}
+
+table {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+
+table th {
+  font-weight: 400;
+}
+
+table tr {
+  font-weight: 600;
+  color: #60656d;
+  border-bottom: 1px solid black;
+}
+
+.fa-circle-info {
+  color: rgb(189, 189, 189);
+  padding: 10px;
+}
+
+
+
+.total-price {
+  float: right;
+  color: #60656d;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.btn-lg {
+  margin-bottom: 20px;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 0.25rem 0.5rem;
+  color: rgb(0, 0, 0) !important;
+  text-align: center;
+  background-color: #fff !important;
+  border-radius: 0.25rem;
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+  right: -1px;
+  border-width: 0.4rem 0.4rem 0.4rem 0;
+  border-right-color: #fff !important;
+}
+
+@media (max-width: 766px) {
+  .product-box {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .cart-items {
+    margin-bottom: 20px;
+  }
+}

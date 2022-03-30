@@ -1,0 +1,100 @@
+<div class="container">
+  <h2 class="title">Checkout page</h2>
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-12 cart-items">
+      <ng-container *ngFor="let product of products">
+        <div class="product-box d-flex">
+          <div class="box-name">
+          <h6 class="product-name">{{ product.name }}</h6>
+        </div>
+        <div class="box-price mx-3">
+          <h6 class="product-price" *ngIf="symbol != 'Lei'">
+            Price: <strong class="product-cost"> {{symbol}}{{ product.price * rate | number: "1.2-2"}}</strong>
+          </h6>
+          <h6 class="product-price" *ngIf="symbol == 'Lei'">
+            Price: <strong class="product-cost">{{ product.price * rate | number: "1.2-2"}}{{symbol}}</strong>
+          </h6>
+        </div>
+        <div class="box-btn">
+          <button
+            type="button"
+            (click)="addItemToCart(product)"
+            class="btn btn-success"
+          >
+            <i
+              class="fa-solid fa-cart-shopping"
+              style="background-color: #1bb43f00"
+            ></i>
+            Add to cart
+          </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-12 cart">
+      <ng-container *ngIf="totalValue == 0">
+        <h5 class="cart-title">No products in your shopping cart</h5>
+      </ng-container>
+      <ng-container *ngIf="totalValue != 0">
+        <h5 class="cart-title">Products in your shopping cart</h5>
+          <table class="table ">
+          <tbody>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Value</th>
+            </tr>
+            <tr *ngFor="let product of cartProducts">
+              <td>
+                {{ product.name
+                }}<i
+                  *ngIf="product.description"
+                  class="fa-solid fa-circle-info"
+                  placement="end"
+                  ngbTooltip="{{ product.description }}"
+                  tooltipClass="my-custom-class"
+                ></i>
+              </td>
+              <td>
+                <div class="d-flex align-items-center">
+                  <button type="button" (click)="incQnt(product)" class="btn p-2">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <span>{{ product.quantity }}</span>
+                  <button type="button" (click)="decQnt(product)" class="btn p-2">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                </div>
+              </td>
+              <ng-container *ngIf="symbol != 'Lei'">
+              <td>{{symbol}}{{ (product.price * rate) * product.quantity | number: "1.2-2" }}</td>
+              </ng-container>
+                <td *ngIf="symbol == 'Lei'">{{ (product.price * rate) * product.quantity | number: "1.2-2" }}{{symbol}}</td>
+              <td>
+                <button
+                  type="button"
+                  (click)="removeItem(product)"
+                  class="btn-danger"
+                >
+                  <i style="color: white" class="fa-solid fa-trash-can p-2"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h5 class="total-price" *ngIf="symbol != 'Lei'">Total: {{symbol}}{{ totalValue * rate | number: "1.2-2" }}</h5>
+        <h5 class="total-price" *ngIf="symbol == 'Lei'">Total: {{ totalValue * rate | number: "1.2-2" }}{{symbol}}</h5>
+        <br /><br />
+        <div class="col text-center">
+          <button
+            type="button"
+            class="btn btn-success text-center w-100 btn-lg btn-block" routerLink="/cv"
+          >
+            Continue
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container text-center">
+  <div class="col">
+    <br />
+    <div ngbDropdown>
+      <button class="btn btn-dark" id="gfg" ngbDropdownToggle>
+        Change Currency
+      </button>
+      <div ngbDropdownMenu="gfg">
+        <button (click)="changeCurrency('USD')" ngbDropdownItem>USD</button>
+        <button (click)="changeCurrency('EUR')" ngbDropdownItem>EUR</button>
+        <button (click)="changeCurrency('GBP')" ngbDropdownItem>GBP</button>
+        <button (click)="changeCurrency('RON')" ngbDropdownItem>RON</button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-cart [rate]="rate" [symbol]="symbol"></app-cart>

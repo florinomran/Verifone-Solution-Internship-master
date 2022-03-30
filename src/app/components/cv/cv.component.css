@@ -1,0 +1,71 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.fa-brands {
+  margin-right: 20px;
+  font-size: 3em;
+}
+
+.details {
+  padding: 30px;
+  border-right: 2px solid black;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+.place {
+  font-size: 1.1em;
+}
+
+.place,
+.period {
+  color: grey;
+}
+
+.education,
+.work {
+  margin-bottom: 25px;
+}
+
+/* Animation */
+
+.d1 {
+    animation: 1s ease-out 0s 1 fadeIn;
+}
+
+.d2 {
+    animation: 3s ease-out 0s 1 fadeIn;
+}
+
+.d3 {
+    animation: 5s ease-out 0s 1 fadeIn;
+}
+
+.back {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    animation: 7s ease-out 0s 1 fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
